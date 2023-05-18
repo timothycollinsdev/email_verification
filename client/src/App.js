@@ -14,7 +14,6 @@ function App() {
       emails: emails
     })
     .then(() => {
-      console.log("GGGGGGGGGGG")
     })
     .catch(() => {
 
