@@ -3,6 +3,7 @@ var router = express.Router();
 
 const validateEmailSyntax = require('./validators/syntaxValidator');
 const validateEmailDomain = require('./validators/domainValidator');
+const validateEmailMailbox = require('./validators/mailboxValidator');
 
 router.post('/', function(req, res) {
   const email = req.body?.emails
@@ -16,6 +17,8 @@ router.post('/', function(req, res) {
     })
     return 
   }
+
+  validateEmailMailbox(email)
 
   // domain validation
   validateEmailDomain(email)
